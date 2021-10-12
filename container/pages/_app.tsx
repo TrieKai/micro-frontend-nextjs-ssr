@@ -1,7 +1,13 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import "../styles/globals.css";
+import type { AppProps } from "next/app";
+
+import CountContextProvider from "../context/Context";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <CountContextProvider>
+      <Component {...pageProps} />
+    </CountContextProvider>
+  );
 }
-export default MyApp
+export default MyApp;
